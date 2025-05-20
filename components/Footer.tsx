@@ -10,13 +10,19 @@ export default function Footer() {
         <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full bg-accent/10"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           <div className="lg:col-span-2">
             <div className="flex items-center mb-6">
-              {/* Replace with your actual logo */}
-              <div className="h-10 w-10 rounded-full bg-white/20 flex items-center justify-center text-white font-bold mr-3">A</div>
-              <span className="text-xl font-bold text-white">Adansi Edu Consult</span>
+              <div className="flex items-center">
+                <img 
+                  src="/images/logo.png" 
+                  alt="Adansi Education" 
+                  className="h-10 sm:h-12 w-auto transition-all duration-300" 
+                />
+                <span className="border-l-4 border-accent h-10 mx-4 hidden sm:block"></span>
+                <span className="text-white/80 text-sm uppercase tracking-wider font-medium hidden sm:block">Study Abroad</span>
+              </div>
             </div>
             <p className="text-white/80 mb-6 max-w-md">
               Your trusted partner in educational consulting services, guiding students toward academic success and future opportunities through personalized consulting.

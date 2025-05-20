@@ -15,6 +15,16 @@ module.exports = {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
       },
+      container: {
+        padding: {
+          DEFAULT: '1.5rem',
+          sm: '2rem',
+          md: '3rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
+        },
+      },
     }
   },
   plugins: [],

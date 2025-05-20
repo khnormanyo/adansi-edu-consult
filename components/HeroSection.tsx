@@ -62,7 +62,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative w-full h-screen overflow-hidden -mt-[1px]" style={{ marginTop: 0, paddingTop: 0 }}>
+    <section className="relative w-full h-screen overflow-hidden" style={{ marginTop: 'calc(-1 * var(--current-navbar-height, var(--navbar-height)))', paddingTop: 'var(--current-navbar-height, var(--navbar-height))' }}>
       {/* Full-width background slider */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -104,7 +104,7 @@ export default function HeroSection() {
       </button>
 
       {/* Centered content container */}
-      <div className="container mx-auto h-full px-4 relative z-10 flex items-center">
+      <div className="container mx-auto h-full relative z-10 flex items-center">
         <div className="max-w-5xl mx-auto text-center text-white">
           {slides.map((slide, index) => (
             <div 
