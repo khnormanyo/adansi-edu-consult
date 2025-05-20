@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to newsletter subscribers
+    match /newsletter_subscribers/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if true; // Allow anyone to subscribe to the newsletter
+    }
+    
+    // Allow read/write access to contact form submissions
+    match /contact_submissions/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if true; // Allow anyone to submit contact forms
+    }
+    
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

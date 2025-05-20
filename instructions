@@ -1,0 +1,182 @@
+
+# AdansiEduConsult Website Rebuild — Instructions.md
+
+## S — Situation  
+Adansi Edu Consult requires a redesign of its website (https://adansieduconsult.com/) using **Next.js** and **Firebase**. The goal is to deliver a clean, responsive, and visually appealing site that reflects the organization’s values while improving usability and performance. The layout will follow a modern and creative template, adapted to fit Adansi’s brand identity.
+
+## C — Context  
+- **Stack**: Next.js 14+ (App Router, TypeScript), Tailwind CSS, Firebase (Hosting, Firestore for newsletter or form submissions)  
+- **Deployment**: Firebase Hosting with GitHub CI/CD  
+- **Design Reference**: modern and creative template 
+- **Pages**: `/` (Home), `/about` (About Us), `/packages`, `/contact`  
+- **Branding**: Maintain original color palette, fonts, and logo usage from the existing site  
+- **Accessibility**: Follow WCAG AA best practices
+
+## R — Role  
+You are the frontend engineer and integrator. Your task is to create a modern, component-driven React/Next.js site deployed via Firebase, structured around the specified four core pages. You will ensure content is dynamic, layout is responsive, and design aligns with the branding of Adansi Edu Consult.
+
+## I — Instructions
+
+### Phase 1 · Project Foundation
+1. **Initialize Next.js Project with App Router:**
+   ```bash
+   npx create-next-app@latest adansiedu-site --typescript --app
+   ```
+
+2. **Install Tailwind CSS:**
+   ```bash
+   npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init -p
+   ```
+
+3. **Configure Tailwind:**
+   - Add Tailwind CSS to `globals.css`:
+     ```css
+     @tailwind base;
+     @tailwind components;
+     @tailwind utilities;
+     ```
+
+   - Extend theme in `tailwind.config.ts`:
+     ```ts
+     theme: {
+       extend: {
+         colors: {
+           primary: '#003366',
+           accent: '#F6A21E'
+         },
+         fontFamily: {
+           sans: ['Poppins', 'sans-serif'],
+         },
+       }
+     }
+     ```
+
+4. **Initialize Firebase:**
+   ```bash
+   firebase login
+   firebase init (select Hosting, optionally Firestore)
+   ```
+
+---
+
+### Phase 2 · Routing & Layout Structure
+
+1. **Create base layout in `/app/layout.tsx`:**
+   - Include persistent header (`<Navbar />`) and footer (`<Footer />`)
+   - Use Tailwind classes for responsive structure
+
+2. **Define routes:**
+   - `/` — Home Page
+   - `/about` — About Us
+   - `/packages` — Program/Service Packages
+   - `/contact` — Contact Page
+
+3. **Set up navigation and page structure using App Router.**
+
+---
+
+### Phase 3 · Page and Component Development
+
+1. **Home Page (`/app/page.tsx`):**
+   - `HeroSection`: Eye-catching intro with CTA
+   - `MissionBlock`: Summary of Adansi’s purpose
+   - `FeaturedPackages`: Highlight 2–3 services
+   - `GalleryPreview`: Images or testimonials
+   - `NewsletterSignup`: Firebase Firestore integration
+
+2. **About Page (`/app/about/page.tsx`):**
+   - `AboutBlock`: Two-column layout (image + history/vision text)
+   - `TeamSection`: Profiles or brief descriptions (optional)
+
+3. **Packages Page (`/app/packages/page.tsx`):**
+   - `PackageCards`: Grid or list of offerings
+   - Optional filters/categories
+   - Firebase-driven content for easy updates (optional)
+
+4. **Contact Page (`/app/contact/page.tsx`):**
+   - `ContactForm`: Form with name, email, message
+   - Save to Firestore or email via Firebase Functions
+   - Include map/embed and contact info section
+
+---
+
+### Phase 4 · Styling & Accessibility
+
+- Ensure all components are:
+  - Fully responsive (mobile-first layout)
+  - Color-contrast accessible
+  - Keyboard-navigable with clear focus indicators
+
+- Use Tailwind best practices for layout and typography
+- Create utility-first button and card components
+- Apply consistent spacing, padding, and border radius via `theme.extend`
+
+---
+
+### Phase 5 · Content Integration
+
+- Migrate text and images from https://adansieduconsult.com/  
+- Validate each page for:
+  - Readability (font size, line height)
+  - Structured semantic HTML (`<main>`, `<section>`, `<footer>`)
+  - Proper alt text and aria-labels
+
+- Load newsletter form and optionally packages list dynamically from Firestore
+
+---
+
+### Phase 6 · Deployment
+
+1. **Static Export:**
+   ```bash
+   npm run build
+   npm run export
+   ```
+
+2. **Deploy to Firebase:**
+   ```bash
+   firebase deploy
+   ```
+
+3. **Post-Deployment Tasks:**
+   - Configure custom domain
+   - Set up HTTPS and cache headers
+   - Add SEO metadata, favicon, and OG image
+   - Enable analytics (optional)
+
+---
+
+## B — Behaviour  
+- Modular component structure (`components/`, `app/`)  
+- Consistent Tailwind design patterns  
+- Commit often with clear messages  
+- Use `.env.local` for Firebase keys  
+- Optimize for performance and mobile usability  
+- Apply proper form validation and error handling
+
+---
+
+## E — End Results
+
+**Functional**
+- Fully working 4-page site with dynamic layout
+- Firebase contact form and newsletter signup
+- Tailored brand design consistent with Adansi’s identity
+
+**Technical**
+- Firebase deployed static site
+- Firebase Firestore for newsletter/contact storage
+- GitHub-hosted codebase
+
+**Quality**
+- Clean Tailwind styling and UI components
+- Accessible, semantic HTML structure
+- Responsive across devices
+- SEO-ready, fast-loading, and secure
+
+**Deliverables:**  
+- GitHub repo with structured components  
+- Firebase live site URL  
+- Tailwind config + `.env.example`  
+- README with install and deploy steps
