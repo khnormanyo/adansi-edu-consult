@@ -40,7 +40,7 @@ export default function NewsletterSignup() {
         <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full bg-accent/10"></div>
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl shadow-xl p-10 relative overflow-hidden">
             {/* Decorative corner accents */}

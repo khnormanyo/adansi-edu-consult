@@ -23,7 +23,7 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow pt-[120px] md:pt-[150px]">{children}</main>
+        <main className="flex-grow" style={{ paddingTop: 'var(--current-navbar-height, var(--navbar-height))' }}>{children}</main>
         <Footer />
       </body>
     </html>

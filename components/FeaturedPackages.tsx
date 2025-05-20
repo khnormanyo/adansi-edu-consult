@@ -43,7 +43,7 @@ export default function FeaturedPackages() {
       <div className="absolute top-20 right-0 w-64 h-64 bg-primary/5 rounded-full"></div>
       <div className="absolute bottom-20 left-0 w-64 h-64 bg-accent/5 rounded-full"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="inline-block px-3 py-1 bg-accent/10 rounded-full text-accent text-sm font-medium mb-4">
             Our Services

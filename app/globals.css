@@ -4,12 +4,30 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
+  --navbar-height: 100px;
+  --navbar-height-scrolled: 80px;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-start-rgb));
+  background-color: #f9f9f9;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(3, 132, 78, 0.03) 0px,
+    rgba(3, 132, 78, 0.03) 1px,
+    transparent 1px,
+    transparent 10px
+  );
   font-family: 'Poppins', sans-serif;
+}
+
+/* Additional whitespace buffer for better readability */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* For sections with light gray backgrounds */
+.bg-gray-50 {
+  background-color: rgba(249, 250, 251, 0.98);
 }
